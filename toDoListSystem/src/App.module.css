@@ -1,0 +1,10 @@
+.context {
+
+    background: var(--color-gray-500);
+}
+
+.panel {
+
+    width: 800px;
+    justify-content: center;
+}

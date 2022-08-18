@@ -1,0 +1,17 @@
+.context {
+
+    background: var(--color-gray-700);
+    height: 200px;
+    width: auto;
+}
+
+.logoContext {
+
+    display: flex;
+    justify-content: center;
+}
+
+.logoContext img {
+
+    margin-top: 4.5rem;
+}

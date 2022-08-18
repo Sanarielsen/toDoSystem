@@ -1,0 +1,17 @@
+.context {
+
+    display: flex;
+    justify-content: center;
+}
+
+.context input {
+
+    margin-right: 1rem;
+    width: 70vh;
+}
+
+.context button {
+
+    background: var(--color-blue-dark);
+    color: var(--color-gray-100);
+}
