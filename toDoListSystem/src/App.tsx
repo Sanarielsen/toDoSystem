@@ -6,6 +6,25 @@ import { Task } from './components/Task'
 import styles from './App.module.css'
 import './global.css'
 
+const listTasks = [
+  {
+    description: "Fazer a atividade do ignite",
+    status: true
+  },
+  {
+    description: "Fazer a atividade do ignite 2",
+    status: true
+  },
+  {
+    description: "Fazer a atividade do ignite 3",
+    status: true
+  },
+  {
+    description: "Fazer a atividade do ignite 4",
+    status: false
+  }
+]
+
 function App() {
   
   return (
@@ -21,16 +40,27 @@ function App() {
       </div>
       <div className={styles.propsTasks}>
 
-          <a> Tabelas criadas <span> 5 </span> </a>
-          <a> Concluídas <span> 2 de 5 </span> </a>
+          <div className={styles.propsTasksCreated}>
+            <a> Tasks criadas <span> {listTasks.length} </span> </a>
+          </div>
+          <div className={styles.propsTasksChecked}>
+            <a> Concluídas <span> 2 de {listTasks.length} </span> </a>
+          </div>
       </div> 
       <div className={styles.panelTasks}>
 
-          <Task />
-          <Task />
-          <Task />
-          <Task />
-          <Task />
+          {listTasks.map(task => {
+
+            return (
+
+              <Task
+                key={task.description}
+                description={task.description} 
+                status={task.status} 
+                checked={task.status}
+              />
+            )
+          })}
       </div>
     </div>
   )

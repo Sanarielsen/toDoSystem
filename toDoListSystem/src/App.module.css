@@ -1,10 +1,31 @@
-.context {
+.main {
 
-    background: var(--color-gray-500);
+    display: flex;
+    justify-content: center;
 }
 
 .panel {
 
     width: 800px;
     justify-content: center;
+}
+
+.propsTasks {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    width: 800px;
+}
+
+.propsTasksCreated {
+
+    display: flex;
+    align-content: left;
+}
+
+.propsTasks > a {
+
+    width: auto;
 }

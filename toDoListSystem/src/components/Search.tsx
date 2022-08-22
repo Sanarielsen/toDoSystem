@@ -1,4 +1,5 @@
 import styles from './Search.module.css'
+import imgPlus from '../assets/plus.svg'
 
 export function Search() {
 
@@ -7,8 +8,9 @@ export function Search() {
         <div className={styles.context}>
             <form>
                 
-                <input type="text" name="txtTaskDescription" />
-                <button type="button"> Criar </button>
+                <input
+                 type="text" name="txtTaskDescription" />
+                <button type="submit"> <a> Criar </a> <img src={imgPlus}/> </button>
             </form>
         </div>
     )

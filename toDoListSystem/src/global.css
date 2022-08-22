@@ -12,6 +12,7 @@
     --color-blue: #4EA8DE;
     --color-blue-dark: #1E6F9F;
     --color-danger: #E25858;
+    --color-white: #FFFFFF;
 }
 
 * {
@@ -20,4 +21,9 @@
     padding: 0;
     /* Its make the margin and padding never expand width and height in a cases we use this properties */
     box-sizing: border-box;
+}
+
+body {
+
+    background: var(--color-gray-600);
 }

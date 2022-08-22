@@ -10,8 +10,26 @@
     width: 70vh;
 }
 
-.context button {
+form input[type="text"] {
+
+    padding: auto;
+    height: auto;
+    background: var(--color-gray-500);
+    color: var(--color-white);
+    font-size: 32px;
+}
+
+form button[type="submit"] {
 
     background: var(--color-blue-dark);
-    color: var(--color-gray-100);
+    border-radius: 8px;
+    color: white;
+    padding: 1rem;
+    border: 0;
+    cursor: pointer;
+}
+
+button a {
+
+    margin-bottom: 10rem;
 }
