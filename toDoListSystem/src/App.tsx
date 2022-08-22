@@ -8,7 +8,7 @@ import './global.css'
 
 const listTasks = [
   {
-    description: "Fazer a atividade do ignite",
+    description: "Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.",
     status: true
   },
   {
@@ -26,7 +26,31 @@ const listTasks = [
 ]
 
 function App() {
+
+  const [task, setTask] = useState([
+    {
+      description: "Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.",
+      status: true
+    },
+    {
+      description: "Fazer a atividade do ignite 2",
+      status: true
+    },
+    {
+      description: "Fazer a atividade do ignite 3",
+      status: true
+    },
+    {
+      description: "Fazer a atividade do ignite 4",
+      status: false
+    }
+  ]);
   
+  function onDeleteTask(event : MouseEvent) {
+
+    
+  }
+
   return (
     <div className="main">
 
@@ -34,29 +58,29 @@ function App() {
 
           <Header/>
       </div>
-      <div className={styles.context}>
+      <div className={styles.searchArea}>
 
-          <Search/>          
+          <Search/>
       </div>
       <div className={styles.propsTasks}>
 
           <div className={styles.propsTasksCreated}>
-            <a> Tasks criadas <span> {listTasks.length} </span> </a>
+            <a> Tasks created <span> {listTasks.length} </span> </a>
           </div>
           <div className={styles.propsTasksChecked}>
-            <a> Concluídas <span> 2 de {listTasks.length} </span> </a>
+            <a> Finished <span> 2 de {listTasks.length} </span> </a>
           </div>
       </div> 
       <div className={styles.panelTasks}>
 
-          {listTasks.map(task => {
-
+          {listTasks.map((task, index) => {
+            
             return (
 
               <Task
-                key={task.description}
-                description={task.description} 
-                status={task.status} 
+                key={index}
+                description={task.description}
+                status={task.status}
                 checked={task.status}
               />
             )

@@ -1,4 +1,44 @@
+.panel {
+
+    display: flex;
+    justify-content: center;
+}
+
 .task {
 
     display: flex;
+    justify-content: center;
+
+    min-width: 736px;
+
+    padding: 16px;
+    margin-bottom: 12px;
+
+    border-radius: 8px;
+    background: var(--color-gray-400);
+    color: var(--color-white);
+}
+
+.taskCheck {
+
+    margin-right: 5px;
+}
+
+.taskDescription {
+
+    margin: 0 16px;
+    width: 632px;
+}
+
+.taskChecked {
+
+    background: var(--color-purple-dark);
+    color: var(--color-white);
+    border-radius: 999px;
+}
+
+.taskDescriptionFinished {
+
+    text-decoration-line: line-through;
+    color: gray;
 }

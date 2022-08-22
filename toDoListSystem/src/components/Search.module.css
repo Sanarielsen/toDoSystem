@@ -1,35 +1,36 @@
-.context {
+.context form {
 
     display: flex;
     justify-content: center;
 }
 
-.context input {
+.contextImg {
 
-    margin-right: 1rem;
-    width: 70vh;
+    margin-left: 5px;
 }
 
 form input[type="text"] {
-
-    padding: auto;
+    
     height: auto;
+    width: 632px;
+    border: 0;
+    border-radius: 8px;
+    margin-right: 1rem;
+    padding: 1rem;
     background: var(--color-gray-500);
     color: var(--color-white);
-    font-size: 32px;
+    font-size: 18px;
 }
 
 form button[type="submit"] {
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: var(--color-blue-dark);
     border-radius: 8px;
     color: white;
     padding: 1rem;
     border: 0;
     cursor: pointer;
-}
-
-button a {
-
-    margin-bottom: 10rem;
 }

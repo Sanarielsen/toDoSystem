@@ -9,8 +9,10 @@ export function Search() {
             <form>
                 
                 <input
-                 type="text" name="txtTaskDescription" />
-                <button type="submit"> <a> Criar </a> <img src={imgPlus}/> </button>
+                 type="text" name="txtTaskDescription"
+                 placeholder='Add a new task for you here' 
+                 />
+                <button type="submit"> <a> Create </a> <img className={styles.contextImg} src={imgPlus}/> </button>
             </form>
         </div>
     )
