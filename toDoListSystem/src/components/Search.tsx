@@ -12,7 +12,7 @@ export function Search({...props}) {
                 <input
                     type="text" name="txtTaskDescription"
                     placeholder='Add a new task for you here'
-                    onChange={props.onChange} 
+                    onChange={props.onChange}
                  />
                 <button type="submit"> <a> Create </a> <img className={styles.contextImg} src={imgPlus}/> </button>
             </form>

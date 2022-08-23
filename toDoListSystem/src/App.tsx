@@ -6,27 +6,16 @@ import { Task } from './components/Task'
 import styles from './App.module.css'
 import './global.css'
 
-function App() {
+type Task = {
 
+  description: string,
+  status: boolean
+}
+
+function App() {
+  
   const [currentTask, setCurrentTask] = useState('')
-  const [tasks, setTasks] = useState([
-    {
-      description: "Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.",
-      status: true
-    },
-    {
-      description: "Fazer a atividade do ignite 2",
-      status: true
-    },
-    {
-      description: "Fazer a atividade do ignite 3",
-      status: true
-    },
-    {
-      description: "Fazer a atividade do ignite 4",
-      status: false
-    }
-  ]);
+  const [tasks, setTasks] = useState<Task[]>([]);
 
   function onIncludeTask(event : FormEvent) {
 
@@ -40,15 +29,26 @@ function App() {
     setTasks([...tasks, currentTaskComplete])
   }
 
+  //Function response to save the input value in execution time
   function handleNewTaskChange( event: ChangeEvent<HTMLInputElement> ) {
 
     setCurrentTask(event.target.value)
+  }
+
+  function handleTaskStatusChange(taskToChange : Task) {
+    
+    
   }
   
   function onDeleteTask(taskIndex: number) {
 
     tasks.splice(taskIndex, 1)
     setTasks([...tasks])
+  }
+
+  function verifyTasksChecked() {
+
+    return tasks.filter( task => task.status).length
   }
 
   return (
@@ -60,15 +60,20 @@ function App() {
       </div>
       <div className={styles.searchArea}>
 
-          <Search onSubmit={onIncludeTask} onChange={handleNewTaskChange}/>
+          <Search 
+            onSubmit={onIncludeTask} 
+            onChange={handleNewTaskChange}
+          />
       </div>
       <div className={styles.propsTasks}>
 
           <div className={styles.propsTasksCreated}>
+            
             <a> Tasks created <span> {tasks.length} </span> </a>
           </div>
           <div className={styles.propsTasksChecked}>
-            <a> Finished <span> 2 de {tasks.length} </span> </a>
+            
+            <a> Finished <span> <>{verifyTasksChecked()} de {tasks.length}</> </span> </a>
           </div>
       </div> 
       <div className={styles.panelTasks}>
@@ -83,7 +88,9 @@ function App() {
                 description={task.description}
                 status={task.status}
                 checked={task.status}
+                task={task}
                 onDeleteTask={onDeleteTask}
+                onChangeStatus={handleTaskStatusChange}
               />
             )
           })}
