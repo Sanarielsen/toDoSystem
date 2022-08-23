@@ -55,8 +55,8 @@ export function Task({...props}) {
 
     //Responsible to delete the current status in a list;
     function handleDeleteTask(event: MouseEvent) {
-
-        console.log("Deletou o " + props.description)        
+        
+        props.onDeleteTask(props.index)
     }
 
     return (

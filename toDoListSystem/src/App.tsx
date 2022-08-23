@@ -6,25 +6,6 @@ import { Task } from './components/Task'
 import styles from './App.module.css'
 import './global.css'
 
-const listTasks = [
-  {
-    description: "Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.",
-    status: true
-  },
-  {
-    description: "Fazer a atividade do ignite 2",
-    status: true
-  },
-  {
-    description: "Fazer a atividade do ignite 3",
-    status: true
-  },
-  {
-    description: "Fazer a atividade do ignite 4",
-    status: false
-  }
-]
-
 function App() {
 
   const [currentTask, setCurrentTask] = useState('')
@@ -49,17 +30,14 @@ function App() {
 
   function onIncludeTask(event : FormEvent) {
 
-    event.preventDefault();
+    event.preventDefault()
 
     let currentTaskComplete = {
         description: currentTask,
         status: false
     }
-    
-    console.log(currentTask);
-    console.log(currentTaskComplete);
 
-    setTasks([...tasks, currentTaskComplete]);
+    setTasks([...tasks, currentTaskComplete])
   }
 
   function handleNewTaskChange( event: ChangeEvent<HTMLInputElement> ) {
@@ -67,9 +45,10 @@ function App() {
     setCurrentTask(event.target.value)
   }
   
-  function onDeleteTask(event : MouseEvent) {
+  function onDeleteTask(taskIndex: number) {
 
-    
+    tasks.splice(taskIndex, 1)
+    setTasks([...tasks])
   }
 
   return (
@@ -86,10 +65,10 @@ function App() {
       <div className={styles.propsTasks}>
 
           <div className={styles.propsTasksCreated}>
-            <a> Tasks created <span> {listTasks.length} </span> </a>
+            <a> Tasks created <span> {tasks.length} </span> </a>
           </div>
           <div className={styles.propsTasksChecked}>
-            <a> Finished <span> 2 de {listTasks.length} </span> </a>
+            <a> Finished <span> 2 de {tasks.length} </span> </a>
           </div>
       </div> 
       <div className={styles.panelTasks}>
@@ -100,9 +79,11 @@ function App() {
 
               <Task
                 key={index}
+                index={index}
                 description={task.description}
                 status={task.status}
                 checked={task.status}
+                onDeleteTask={onDeleteTask}
               />
             )
           })}
