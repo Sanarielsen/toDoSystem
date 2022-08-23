@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { ChangeEvent, FormEvent, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import {Header} from './components/Header'
 import { Search } from './components/Search'
@@ -27,7 +27,8 @@ const listTasks = [
 
 function App() {
 
-  const [task, setTask] = useState([
+  const [currentTask, setCurrentTask] = useState('')
+  const [tasks, setTasks] = useState([
     {
       description: "Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.",
       status: true
@@ -45,6 +46,26 @@ function App() {
       status: false
     }
   ]);
+
+  function onIncludeTask(event : FormEvent) {
+
+    event.preventDefault();
+
+    let currentTaskComplete = {
+        description: currentTask,
+        status: false
+    }
+    
+    console.log(currentTask);
+    console.log(currentTaskComplete);
+
+    setTasks([...tasks, currentTaskComplete]);
+  }
+
+  function handleNewTaskChange( event: ChangeEvent<HTMLInputElement> ) {
+
+    setCurrentTask(event.target.value)
+  }
   
   function onDeleteTask(event : MouseEvent) {
 
@@ -60,7 +81,7 @@ function App() {
       </div>
       <div className={styles.searchArea}>
 
-          <Search/>
+          <Search onSubmit={onIncludeTask} onChange={handleNewTaskChange}/>
       </div>
       <div className={styles.propsTasks}>
 
@@ -73,7 +94,7 @@ function App() {
       </div> 
       <div className={styles.panelTasks}>
 
-          {listTasks.map((task, index) => {
+          {tasks.map((task, index) => {
             
             return (
 
