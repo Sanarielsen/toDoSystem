@@ -27,6 +27,7 @@ function App() {
     }
 
     setTasks([...tasks, currentTaskComplete])
+    setCurrentTask('');
   }
 
   //Function response to save the input value in execution time
@@ -35,9 +36,10 @@ function App() {
     setCurrentTask(event.target.value)
   }
 
-  function handleTaskStatusChange(taskToChange : Task) {
+  function handleTaskStatusChange(indexTask : number) {
     
-    
+    tasks[indexTask].status = !tasks[indexTask].status
+    setTasks([...tasks])
   }
   
   function onDeleteTask(taskIndex: number) {
@@ -47,7 +49,7 @@ function App() {
   }
 
   function verifyTasksChecked() {
-
+    
     return tasks.filter( task => task.status).length
   }
 
@@ -63,6 +65,7 @@ function App() {
           <Search 
             onSubmit={onIncludeTask} 
             onChange={handleNewTaskChange}
+            value={currentTask}
           />
       </div>
       <div className={styles.propsTasks}>
@@ -88,7 +91,6 @@ function App() {
                 description={task.description}
                 status={task.status}
                 checked={task.status}
-                task={task}
                 onDeleteTask={onDeleteTask}
                 onChangeStatus={handleTaskStatusChange}
               />

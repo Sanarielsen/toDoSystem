@@ -17,7 +17,7 @@ export function Task({...props}) {
     function handleChangeStatus(event: MouseEvent) {
 
         setStatusTask(!statusTask);
-        props.onChangeStatus(props.task);
+        props.onChangeStatus(props.index);
     }
     const changeImage = () => {
 
