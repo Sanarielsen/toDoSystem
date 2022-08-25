@@ -2,7 +2,7 @@
   "name": "todolistsystem",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://gitname.github.io/toDoSystem",
+  "homepage": "https://sanarielsen.github.io/toDoSystem",
   "type": "module",
   "scripts": {
     "dev": "vite",
