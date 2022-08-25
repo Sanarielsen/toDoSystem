@@ -1,8 +1,9 @@
-import { ChangeEvent, FormEvent, useState } from 'react'
+import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import {Header} from './components/Header'
 import { Search } from './components/Search'
 import { Task } from './components/Task'
+import imgClipboard from './assets/Clipboard.svg'
 import styles from './App.module.css'
 import './global.css'
 
@@ -78,24 +79,35 @@ function App() {
             
             <a> Finished <span> <>{verifyTasksChecked()} de {tasks.length}</> </span> </a>
           </div>
-      </div> 
+      </div>       
       <div className={styles.panelTasks}>
-
-          {tasks.map((task, index) => {
-            
-            return (
-
-              <Task
-                key={index}
-                index={index}
-                description={task.description}
-                status={task.status}
-                checked={task.status}
-                onDeleteTask={onDeleteTask}
-                onChangeStatus={handleTaskStatusChange}
-              />
-            )
-          })}
+          
+          {tasks.length > 0 &&
+              <div className={styles.panelList}>
+                {tasks.map((task, index) => {
+                  
+                  return (
+                    
+                    <Task
+                      key={index}
+                      index={index}
+                      description={task.description}
+                      status={task.status}
+                      checked={task.status}
+                      onDeleteTask={onDeleteTask}
+                      onChangeStatus={handleTaskStatusChange}
+                    />
+                  )
+                })}
+              </div>
+            }
+            {tasks.length === 0 && 
+              <div className={styles.panelWarning}>
+                <img src={imgClipboard} />
+                <p> <b> Você ainda não tem tarefas cadastradas </b> </p>
+                <p> Crie tarefas e organize seus itens a fazer </p>
+              </div>
+            }
       </div>
     </div>
   )

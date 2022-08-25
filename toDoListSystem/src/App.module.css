@@ -10,6 +10,36 @@
     justify-content: center;
 }
 
+.panelTasks {
+
+    width: 74vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.panelWarning {
+
+    width: 74vh;
+    padding: 5rem;
+    border-top: 1px solid;
+    border-radius: 8px;
+    /*border-top: 1 solid; */
+    /*border-radius: 8px; */
+    border-color: var(--color-gray-400);
+    text-align: center;
+}
+
+.panelWarning img {
+    
+    margin-bottom: 1rem;
+}
+
+.panelWarning p {
+    
+    color: var(--color-gray-300);
+}
+
 .searchArea {
 
     margin-top: -1rem;
@@ -21,7 +51,7 @@
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
-    width: 736px;
+    width: 732px;
     padding-bottom: 2rem;
     color: white;
 }
