@@ -19,6 +19,8 @@ export function Task({...props}) {
         setStatusTask(!statusTask);
         props.onChangeStatus(props.index);
     }
+
+    //Responsible to change the image of the checkbox;
     const changeImage = () => {
 
         let image
@@ -39,6 +41,8 @@ export function Task({...props}) {
         }
         return(image)
     }
+
+    //Responsible to change the status of the current task
     const changeDescriptionState = () => {
 
         let descComponent

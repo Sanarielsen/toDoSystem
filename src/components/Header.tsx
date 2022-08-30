@@ -4,15 +4,12 @@ import toDoLogo from '../assets/Logo.svg'
 export function Header() {
 
     return (
+        <div className={styles.context}>
 
-        <>
-            <div className={styles.context}>
+            <div className={styles.logoContext}>
 
-                <div className={styles.logoContext}>
-
-                    <img src={toDoLogo}></img>
-                </div>
+                <img src={toDoLogo}></img>
             </div>
-        </>
+        </div>
     )
 }

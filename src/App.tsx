@@ -18,6 +18,7 @@ function App() {
   const [currentTask, setCurrentTask] = useState('')
   const [tasks, setTasks] = useState<Task[]>([]);
 
+  //Function response to the add the task to list of tasks
   function onIncludeTask(event : FormEvent) {
 
     event.preventDefault()
@@ -34,21 +35,25 @@ function App() {
   //Function response to save the input value in execution time
   function handleNewTaskChange( event: ChangeEvent<HTMLInputElement> ) {
 
+    event.target.setCustomValidity('')
     setCurrentTask(event.target.value)
   }
 
+  //Responsible to change the image when we clicked the component
   function handleTaskStatusChange(indexTask : number) {
     
     tasks[indexTask].status = !tasks[indexTask].status
     setTasks([...tasks])
   }
   
+  //Responsible to delete the current task
   function onDeleteTask(taskIndex: number) {
 
     tasks.splice(taskIndex, 1)
     setTasks([...tasks])
-  }
+  }  
 
+  //Responsible to return number of tasks checked
   function verifyTasksChecked() {
     
     return tasks.filter( task => task.status).length
