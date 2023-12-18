@@ -1,3 +1,9 @@
+# Extensions Folders/Files
+node_modules/
+
+# Config variables
+.env
+
 # Logs
 logs
 *.log
