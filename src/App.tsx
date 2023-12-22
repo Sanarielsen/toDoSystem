@@ -1,17 +1,11 @@
-import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
+import { ChangeEvent, FormEvent, useState } from 'react'
 import {Header} from './components/Header'
 import { Search } from './components/Search'
-import { Task } from './components/Task'
 import imgClipboard from './assets/Clipboard.svg'
 import styles from './App.module.css'
 import './global.css'
-
-type Task = {
-
-  description: string,
-  status: boolean
-}
+import { TaskViewSimple } from './features/task/components/TaskViewSimple'
+import { Task, TaskStatus } from './features/task/types/Task'
 
 function App() {
   
@@ -23,9 +17,9 @@ function App() {
 
     event.preventDefault()
 
-    let currentTaskComplete = {
-        description: currentTask,
-        status: false
+    let currentTaskComplete: Task = {
+        title: currentTask,
+        status: TaskStatus.UNCOMPLETED
     }
 
     setTasks([...tasks, currentTaskComplete])
@@ -40,11 +34,11 @@ function App() {
   }
 
   //Responsible to change the image when we clicked the component
-  function handleTaskStatusChange(indexTask : number) {
+  // function handleTaskStatusChange(indexTask : number) {
     
-    tasks[indexTask].status = !tasks[indexTask].status
-    setTasks([...tasks])
-  }
+  //   tasks[indexTask].status = !tasks[indexTask].status
+  //   setTasks([...tasks])
+  // }
   
   //Responsible to delete the current task
   function onDeleteTask(taskIndex: number) {
@@ -93,14 +87,19 @@ function App() {
                   
                   return (
                     
-                    <Task
+                    // <Task
+                    //   key={index}
+                    //   index={index}
+                    //   description={task.description}
+                    //   status={task.status}
+                    //   checked={task.status}
+                    //   onDeleteTask={onDeleteTask}
+                    //   onChangeStatus={handleTaskStatusChange}
+                    // />
+                    
+                    <TaskViewSimple
                       key={index}
-                      index={index}
-                      description={task.description}
-                      status={task.status}
-                      checked={task.status}
-                      onDeleteTask={onDeleteTask}
-                      onChangeStatus={handleTaskStatusChange}
+                      task={task}
                     />
                   )
                 })}
