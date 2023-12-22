@@ -13,6 +13,10 @@
     --color-blue-dark: #1E6F9F;
     --color-danger: #E25858;
     --color-white: #FFFFFF;
+
+    --theme-primary-color: #536473;
+    --theme-color-secondary: #383C40;
+    --theme-color-background: #232B33;
 }
 
 * {
@@ -25,7 +29,7 @@
 
 body {
 
-    background: var(--color-gray-600);
+    background: var(--theme-color-background);
 }
 
 body, input, textarea, button {

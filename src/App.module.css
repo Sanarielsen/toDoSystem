@@ -4,30 +4,83 @@
     justify-content: center;
 }
 
+@media only screen and (max-width: 575px) {
+
+	.panelTasks {
+
+    width: 90vw;
+    height: 374px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+	}
+}
+
+@media only screen and (min-width: 576px) {
+
+	.panelTasks {
+
+		width: 576px;
+		height: 374px;
+		margin: 0 auto;
+		display: flex;
+		justify-content: center;
+	}   
+}
+
+@media only screen and (min-width: 768px) {
+
+	.panelTasks {
+
+		width: 768px;
+		margin: 0 auto;
+		display: flex;
+		justify-content: center;
+	}   
+}
+
+@media only screen and (min-width: 992px) {
+
+  .panelTasks {
+    width: 992px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }   
+}
+
+@media only screen and (min-width: 1200px) {
+
+	.panelTasks {
+
+		width: 1200px;
+		margin: 0 auto;
+		display: flex;
+		justify-content: center;
+	}   
+}
+
 .panel {
 
     width: 800px;
     justify-content: center;
 }
 
-.panelTasks {
+.panelList {
 
-    width: 74vh;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
+    width: 732px;
 }
 
 .panelWarning {
 
-    width: 74vh;
-    padding: 5rem;
-    border-top: 1px solid;
-    border-radius: 8px;
-    /*border-top: 1 solid; */
-    /*border-radius: 8px; */
-    border-color: var(--color-gray-400);
-    text-align: center;
+  width: 74vh;
+  padding: 5rem;
+  border-top: 1px solid;
+  border-radius: 8px;
+  /*border-top: 1 solid; */
+  /*border-radius: 8px; */
+  border-color: var(--color-gray-400);
+  text-align: center;
 }
 
 .panelWarning img {
@@ -48,48 +101,48 @@
 
 .propsTasks {
 
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto;
-    width: 732px;
-    padding-bottom: 2rem;
-    color: white;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 732px;
+  padding-bottom: 2rem;
+  color: white;
 }
 
 .propsTasksCreated a {
     
-    color: var(--color-blue);
-    font-weight: 700;
-    font-size: 14px;
+  color: var(--color-blue);
+  font-weight: 700;
+  font-size: 14px;
 }
 
 .propsTasksCreated a span {
 
-    margin-left: 5px;
-    padding: 2px 8px;
-    background: var(--color-gray-400);
-    border-radius: 999px;
-    color: var(--color-white);
-    font-weight: 700;
-    font-size: 12px;
+  margin-left: 5px;
+  padding: 2px 8px;
+  background: var(--color-gray-400);
+  border-radius: 999px;
+  color: var(--color-white);
+  font-weight: 700;
+  font-size: 12px;
 }
 
 .propsTasksChecked a {
 
-    color: var(--color-purple);
-    font-weight: 700;
-    font-size: 14px;
+  color: var(--color-purple);
+  font-weight: 700;
+  font-size: 14px;
 }
 
 .propsTasksChecked a span {
 
-    margin-left: 5px;
-    padding: 2px 8px;
-    background: var(--color-gray-400);
-    border-radius: 999px;
-    color: var(--color-white);
-    font-weight: 700;
-    font-size: 12px;
+  margin-left: 5px;
+  padding: 2px 8px;
+  background: var(--color-gray-400);
+  border-radius: 999px;
+  color: var(--color-white);
+  font-weight: 700;
+  font-size: 12px;
 }
 
 
