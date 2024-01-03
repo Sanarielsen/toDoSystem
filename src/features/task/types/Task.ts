@@ -1,6 +1,9 @@
 export type Task = {
+  id: number;
   title: string;
   status: TaskStatus;
+  until: string;
+  recorrence: string;
 }
 
 export enum TaskStatus {
