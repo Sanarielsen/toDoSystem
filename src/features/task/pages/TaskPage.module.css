@@ -1,0 +1,125 @@
+.main {
+
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 575px) {
+
+  .panelTasks {
+
+    width: 90vw;
+    height: 374px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media only screen and (min-width: 576px) {
+
+  .panelTasks {
+
+    width: 576px;
+    height: 374px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+
+  .panelTasks {
+
+    width: 768px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+
+  .panelTasks {
+    width: 992px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+
+  .panelTasks {
+
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.panel {
+
+  width: 800px;
+  justify-content: center;
+}
+
+.panelList {
+
+  width: 732px;
+}
+
+.panelWarning {
+
+  width: 74vh;
+  padding: 5rem;
+  margin-top: 4px;
+  border-top: 1px solid;
+  border-radius: 8px;
+  border-color: var(--color-gray-400);
+  text-align: center;
+}
+
+.panelWarning img {
+
+  margin-bottom: 1rem;
+}
+
+.panelWarning p {
+
+  color: var(--color-gray-300);
+}
+
+@media only screen and (max-width: 767px) {
+  .panelAddTask {
+
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .panelAddTask {
+
+    width: 732px;
+    margin: 0 auto;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+}
+
+.propsTasks {
+
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 732px;
+  padding-bottom: 2rem;
+  color: white;
+}
+
+
