@@ -1,7 +1,7 @@
 .context {
 
-    background: var(--color-gray-700);
-    height: 200px;
+    background: var(--theme-color-secondary);
+    height: 160px;
     width: auto;
 }
 
@@ -9,9 +9,11 @@
 
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
-.logoContext img {
-
-    margin-top: 4.5rem;
+.brandResponsive {
+    max-height: 110px;
+    max-width: 110px;
 }
