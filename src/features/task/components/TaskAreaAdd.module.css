@@ -1,0 +1,38 @@
+.formAddNewTask {
+
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.panelTaskAddInput {
+
+  width: 80vw;
+}
+
+.panelTaskAddButton {
+
+  margin-left: 8px;
+}
+
+.taskTitle {
+
+  width: 100%;
+}
+
+.btnAddTask {
+
+  display: flex;
+}
+
+.btnAddTask:hover {
+
+  background-color: green;
+}
+
+.iconButton {
+
+  width: 28px;
+  height: 28px;
+}

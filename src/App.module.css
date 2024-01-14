@@ -75,6 +75,7 @@
 
   width: 74vh;
   padding: 5rem;
+  margin-top: 4px;
   border-top: 1px solid;
   border-radius: 8px;
   /*border-top: 1 solid; */
@@ -93,10 +94,24 @@
     color: var(--color-gray-300);
 }
 
-.searchArea {
+@media only screen and (max-width: 767px) {
+  .panelAddTask {
 
-    margin-top: -1rem;
-    margin-bottom: 3rem;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .panelAddTask {
+
+    width: 732px;
+    margin: 0 auto;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
 }
 
 .propsTasks {
@@ -107,42 +122,6 @@
   width: 732px;
   padding-bottom: 2rem;
   color: white;
-}
-
-.propsTasksCreated a {
-    
-  color: var(--color-blue);
-  font-weight: 700;
-  font-size: 14px;
-}
-
-.propsTasksCreated a span {
-
-  margin-left: 5px;
-  padding: 2px 8px;
-  background: var(--color-gray-400);
-  border-radius: 999px;
-  color: var(--color-white);
-  font-weight: 700;
-  font-size: 12px;
-}
-
-.propsTasksChecked a {
-
-  color: var(--color-purple);
-  font-weight: 700;
-  font-size: 14px;
-}
-
-.propsTasksChecked a span {
-
-  margin-left: 5px;
-  padding: 2px 8px;
-  background: var(--color-gray-400);
-  border-radius: 999px;
-  color: var(--color-white);
-  font-weight: 700;
-  font-size: 12px;
 }
 
 

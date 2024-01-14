@@ -1,40 +1,62 @@
 :root {
 
-    --color-gray-100: #F2F2F2;
-    --color-gray-200: #D9D9D9;
-    --color-gray-300: #808080;
-    --color-gray-400: #333333;
-    --color-gray-500: #262626;
-    --color-gray-600: #1A1A1A;
-    --color-gray-700: #0D0D0D;
-    --color-purple: #8284FA;
-    --color-purple-dark: #5E60CE;
-    --color-blue: #4EA8DE;
-    --color-blue-dark: #1E6F9F;
-    --color-danger: #E25858;
-    --color-white: #FFFFFF;
+  --color-gray-100: #F2F2F2;
+  --color-gray-200: #D9D9D9;
+  --color-gray-300: #808080;
+  --color-gray-400: #333333;
+  --color-gray-500: #262626;
+  --color-gray-600: #1A1A1A;
+  --color-gray-700: #0D0D0D;
+  --color-purple: #8284FA;
+  --color-purple-dark: #5E60CE;
+  --color-blue: #4EA8DE;
+  --color-blue-dark: #1E6F9F;
+  --color-danger: #E25858;
+  --color-white: #FFFFFF;
 
-    --theme-primary-color: #536473;
-    --theme-color-secondary: #383C40;
-    --theme-color-background: #232B33;
+  --theme-primary-color: #536473;
+  --theme-color-secondary: #383C40;
+  --theme-color-background: #232B33;
 }
 
 * {
 
-    margin: 0;
-    padding: 0;
-    /* Its make the margin and padding never expand width and height in a cases we use this properties */
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /* Its make the margin and padding never expand width and height in a cases we use this properties */
+  box-sizing: border-box;
 }
 
 body {
 
-    background: var(--theme-color-background);
+  background: var(--theme-color-background);
 }
 
 body, input, textarea, button {
 
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+input {
+  background: var(--theme-color-secondary);
+  color: var(--color-white);
+  border: inherit;
+  border-radius: 4px;
+  padding: 8px;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+button {
+  background: var(--theme-color-secondary);
+  color: inherit;
+  border: none;
+  border-radius: 4px;
+  padding: 4px;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 }
