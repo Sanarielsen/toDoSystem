@@ -6,8 +6,10 @@ import styles from "./TaskPage.module.css"
 import {TaskAreaAdd} from "../components/TaskAreaAdd";
 import {TaskView} from "../components/TaskView";
 import imgClipboard from "../../../assets/Clipboard.svg";
+import {ModalAddTaskSpecific} from "../components/ModalAddTaskSpecific";
 
 export function TaskPage() {
+  const [modalType, setModalType] = useState("");
   const [numberTask, setNumberTask] = useState(1);
   const [focusTask, setFocusTask] = useState(0);
   const [tasks, setTasks] = useState<Task[]>([]);
@@ -30,13 +32,17 @@ export function TaskPage() {
     setTasks([...tasks, currentTaskComplete]);
   }
 
+  function handleClickAddNewTaskSpecific() {
+    setModalType("newTask");
+  }
+
   return (
     <div className="main">
       <div className="header">
         <Header />
       </div>
       <div className={styles.panelAddTask}>
-        <TaskAreaAdd onClickAddTask={handleClickAddNewTask} />
+        <TaskAreaAdd onClickAddTask={handleClickAddNewTask} onClickAddTaskSpecific={handleClickAddNewTaskSpecific} />
       </div>
       <div className={styles.panelTasks}>
         {tasks.length > 0 ? (
@@ -62,6 +68,8 @@ export function TaskPage() {
           </div>
         )}
       </div>
+
+      <ModalAddTaskSpecific isOpen={modalType === "newTask"} onClose={() => setModalType("")} />
     </div>
   );
 }
