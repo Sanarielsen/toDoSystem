@@ -5,8 +5,9 @@ import iconAddTaskSpecific from "/src/assets/iconAddTaskSpecific.svg";
 
 interface TaskAreaAddInterface {
   onClickAddTask: (taskTitle: string) => void;
+  onClickAddTaskSpecific: () => void;
 }
-export function TaskAreaAdd({ onClickAddTask }: TaskAreaAddInterface) {
+export function TaskAreaAdd({ onClickAddTask, onClickAddTaskSpecific }: TaskAreaAddInterface) {
 
   const taskTitleRef = useRef<HTMLInputElement>(null);
 
@@ -24,6 +25,10 @@ export function TaskAreaAdd({ onClickAddTask }: TaskAreaAddInterface) {
     event.preventDefault()
     if (!taskTitleRef.current) return;
     onClickAddTask(taskTitleRef.current.value);
+  }
+
+  function handleClickAddNewTaskSpecific() {
+    onClickAddTaskSpecific();
   }
 
   return (
@@ -47,8 +52,8 @@ export function TaskAreaAdd({ onClickAddTask }: TaskAreaAddInterface) {
           </button>
         </div>
         <div className={styles.panelTaskAddButton}>
-          <button className={styles.btnAddTask}>
-            <img className={styles.iconButton} src={iconAddTaskSpecific}></img>{" "}
+          <button type="button" className={styles.btnAddTask} onClick={handleClickAddNewTaskSpecific}>
+            <img className={styles.iconButton} src={iconAddTaskSpecific}></img>
           </button>
         </div>
       </form>
